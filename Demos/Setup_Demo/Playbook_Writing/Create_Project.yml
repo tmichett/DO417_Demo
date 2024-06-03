@@ -1,0 +1,20 @@
+---
+- name: Create Project for Architecture Demo
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Architecture Demo Project
+      ansible.controller.project:
+        name: "DO417 Playbook Writing Project"
+        description: "DO417 Playbook Writing Project from Gitlab"
+        organization: "Default"
+        scm_update_on_launch: "no"
+        scm_url: https://git.lab.example.com/student/playbooks.git
+        scm_type: git
+        scm_branch: main
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
