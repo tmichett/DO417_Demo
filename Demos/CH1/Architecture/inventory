@@ -1,0 +1,11 @@
+desktop.example.com
+win1.example.com
+win2.example.com
+winad.example.com
+
+[all:vars]
+ansible_connection=winrm
+ansible_port=5986
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=kerberos
+ansible_winrm_kerberos_delegation=true

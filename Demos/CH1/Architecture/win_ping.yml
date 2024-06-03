@@ -1,0 +1,20 @@
+---
+- name: Testing of Ansible Automation Controller Environment
+  hosts: all
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Test Ansible Controller Connection to Hosts
+      ansible.windows.win_ping:
+
+    - name: Print out variables
+      ansible.builtin.debug:
+        msg: |
+          The variables are:
+            ansible_user - {{ ansible_user }} 
+            ansible_winrm_transport - {{ ansible_winrm_transport }}
+            ansible_port - {{ ansible_port }}
+            ansible_winrm_server_cert_validation - {{ ansible_winrm_server_cert_validation }}
+            ansible_winrm_kerberos_delegation - {{ ansible_winrm_kerberos_delegation }}
+            ansible_winrm_kerberos_delegation - {{ ansible_winrm_kerberos_delegation }}
+          
