@@ -1,0 +1,3 @@
+= Allowing RDP as the Student User
+
+Run the *Student_RDP_Add.ps1* from an administrative PowerShell on the "DESKTOP" VM. 
