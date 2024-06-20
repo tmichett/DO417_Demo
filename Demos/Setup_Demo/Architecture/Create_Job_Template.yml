@@ -1,10 +1,10 @@
 ---
-- name: Create Job Template
+- name: Create Job Template - for Architecture Demo
   hosts: localhost
 
   tasks:
 
-    - name: Create Job Template
+    - name: Create Architecture Demo Job Template
       ansible.controller.job_template:
         name: "DO417 Architecture Demo - Playbook"
         description: "Demo of Architecture for Controller"
@@ -13,6 +13,22 @@
         inventory: DO417 Demo Inventory
         job_type: run
         playbook: "Demos/CH1/Architecture/win_ping.yml"
+        credential: devops
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
+
+    - name: Create Student User RDP Job Template
+      ansible.controller.job_template:
+        name: "DO417 Student User RDP - Playbook"
+        description: "Add Student User to RDP User Group"
+        organization: Red Hat Training
+        project: DO417 Demo Project
+        inventory: DO417 Demo Inventory
+        job_type: run
+        playbook: "Demos/Setup_Demo/student-user-RDP.yml"
         credential: devops
         controller_username: admin
         controller_password: redhat

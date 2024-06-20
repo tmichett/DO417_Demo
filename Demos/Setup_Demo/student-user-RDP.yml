@@ -1,0 +1,10 @@
+---
+- name: Setup Student User for RDP  
+  hosts: desktop.example.com
+  tasks:
+    - name: Add Student User to Remote Desktop Group
+      ansible.windows.win_group_membership:
+        name: Remote Desktop Users 
+        members: 
+          - devops
+          - student
