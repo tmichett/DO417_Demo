@@ -1,0 +1,20 @@
+---
+- name: Create Project for Playbook Writing Demo
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Playbook Writing Demo Project
+      ansible.controller.project:
+        name: "DO417 Playbook Writing Project - DEMO"
+        description: "DO417 Playbook Writing Project DEMO from Github"
+        organization: "Default"
+        scm_update_on_launch: "no"
+        scm_url: https://github.com/tmichett/do417_projects.git
+        scm_type: git
+        scm_branch: main
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present

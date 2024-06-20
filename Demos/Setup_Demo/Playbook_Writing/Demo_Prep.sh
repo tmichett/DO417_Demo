@@ -11,4 +11,5 @@ ansible-galaxy collection install -r collections/requirements.yml -p collections
 
 echo "**********************************************"
 echo "***** Configuring Controller ********************"
+lab start playbooks-write
 ansible-playbook Site.yml

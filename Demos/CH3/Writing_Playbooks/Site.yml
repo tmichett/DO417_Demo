@@ -1,0 +1,6 @@
+---
+### Create Ansible Controller Demo
+- import_playbook: Create_Project.yml
+# - import_playbook: Setup_Inventory.yml  ## Using DO417 Demo Inventory from CH1
+- import_playbook: Create_Job_Template.yml
+

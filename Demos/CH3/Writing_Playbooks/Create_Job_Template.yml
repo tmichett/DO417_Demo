@@ -1,0 +1,21 @@
+---
+- name: Create Job Template
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Job Template
+      ansible.controller.job_template:
+        name: "DO417 - Playbook Writing - Demo"
+        description: "Playbook Test"
+        organization: Default
+        project: DO417 Playbook Writing Project - DEMO
+        inventory: Dev
+        job_type: run
+        playbook: "CH3/create-files.yml"
+        credential: devops
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
